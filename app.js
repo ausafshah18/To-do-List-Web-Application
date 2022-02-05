@@ -164,13 +164,18 @@ app.post("/delete",function(req,res)
     
     
 })
-
-
-
-
-
-app.listen(3000,function()
+// below code copied from heroku doc
+let port = process.env.PORT;
+if(PORT == null || PORT == "")
 {
-    console.log("Server started on port 3000");
+    port = 8000;
+}
+
+
+
+
+app.listen(port,function()
+{
+    console.log("Server started Successfully");
 });
 
